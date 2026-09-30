@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
-    <!-- Makes the website fit properly on phones -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Panda 🐼</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
 
     <style>
 
@@ -19,35 +20,48 @@
             box-sizing: border-box;
         }
 
+
         body {
+
             margin: 0;
+
             min-height: 100vh;
 
             font-family: 'Nunito', sans-serif;
 
-            /* PANDA BACKGROUND */
             background-image:
-                linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+                linear-gradient(
+                    rgba(0,0,0,0.25),
+                    rgba(0,0,0,0.25)
+                ),
                 url("panda.jpg");
 
             background-size: cover;
+
             background-position: center;
+
             background-repeat: no-repeat;
+
             background-attachment: fixed;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             overflow: hidden;
         }
 
-        /* Main screen container */
+
+        /* SCREEN */
 
         .screen {
+
             display: none;
 
             width: 100%;
+
             max-width: 500px;
 
             padding: 25px;
@@ -57,30 +71,50 @@
             animation: screenIn 0.5s ease;
         }
 
+
         .screen.active {
+
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
         }
 
+
         @keyframes screenIn {
+
             from {
+
                 opacity: 0;
-                transform: scale(0.85) translateY(20px);
+
+                transform:
+                    scale(0.85)
+                    translateY(20px);
             }
 
             to {
+
                 opacity: 1;
-                transform: scale(1) translateY(0);
+
+                transform:
+                    scale(1)
+                    translateY(0);
             }
         }
 
-        /* Title */
+
+        /* TITLE */
 
         .bouncy-title {
+
             font-family: 'Fredoka', sans-serif;
 
-            font-size: clamp(2rem, 8vw, 2.8rem);
+            font-size: clamp(
+                2rem,
+                8vw,
+                2.8rem
+            );
 
             line-height: 1.2;
 
@@ -94,31 +128,48 @@
                 1px -1px 0 #000,
                 -1px 1px 0 #000;
 
-            animation: bounceText 2s infinite alternate ease-in-out;
+            animation:
+                bounceText
+                2s
+                infinite
+                alternate
+                ease-in-out;
 
             margin-bottom: 25px;
         }
 
+
         @keyframes bounceText {
 
             from {
-                transform: translateY(0) rotate(-1deg);
+
+                transform:
+                    translateY(0)
+                    rotate(-1deg);
             }
 
             to {
-                transform: translateY(-8px) rotate(1deg);
+
+                transform:
+                    translateY(-8px)
+                    rotate(1deg);
             }
         }
 
-        /* Buttons */
+
+        /* BUTTONS */
 
         .button-container {
+
             display: flex;
+
             justify-content: center;
+
             gap: 12px;
 
             width: 100%;
         }
+
 
         .cute-btn {
 
@@ -139,34 +190,83 @@
             min-width: 120px;
 
             box-shadow:
-                0 8px 15px rgba(0,0,0,0.25);
+                0 8px 15px
+                rgba(0,0,0,0.25);
 
             transition: 0.2s ease;
         }
 
+
         .cute-btn:hover {
-            transform: translateY(-5px) scale(1.05);
+
+            transform:
+                translateY(-5px)
+                scale(1.05);
         }
+
 
         .cute-btn:active {
-            transform: scale(0.95);
+
+            transform:
+                scale(0.95);
         }
 
+
         .btn-yes {
+
             background: #ff9ff3;
+
             color: #833471;
         }
 
+
         .btn-no {
+
             background: #48dbfb;
+
             color: #075985;
         }
 
-        /* QR Code */
+
+        /* IMAGES */
+
+        .pay-image {
+
+            width: min(
+                300px,
+                80vw
+            );
+
+            max-height: 350px;
+
+            object-fit: contain;
+
+            border-radius: 20px;
+
+            border: 5px solid white;
+
+            padding: 5px;
+
+            background:
+                rgba(255,255,255,0.85);
+
+            box-shadow:
+                0 12px 30px
+                rgba(0,0,0,0.3);
+
+            margin-bottom: 20px;
+
+            animation:
+                popIn 0.6s ease;
+        }
+
 
         .qr-image {
 
-            width: min(250px, 75vw);
+            width: min(
+                250px,
+                70vw
+            );
 
             border-radius: 24px;
 
@@ -174,28 +274,41 @@
 
             padding: 10px;
 
-            background: rgba(255,255,255,0.85);
+            background:
+                rgba(255,255,255,0.9);
 
             box-shadow:
-                0 15px 30px rgba(0,0,0,0.3);
+                0 15px 30px
+                rgba(0,0,0,0.3);
 
-            animation: popIn 0.6s ease;
+            animation:
+                popIn 0.7s ease;
         }
+
 
         @keyframes popIn {
 
             from {
+
                 opacity: 0;
-                transform: scale(0.5) rotate(-10deg);
+
+                transform:
+                    scale(0.5)
+                    rotate(-10deg);
             }
 
             to {
+
                 opacity: 1;
-                transform: scale(1) rotate(0);
+
+                transform:
+                    scale(1)
+                    rotate(0);
             }
         }
 
-        /* Small buttons */
+
+        /* RESTART BUTTON */
 
         .restart-link {
 
@@ -203,11 +316,10 @@
 
             color: white;
 
-            text-decoration: none;
-
             font-weight: bold;
 
-            background: rgba(0,0,0,0.55);
+            background:
+                rgba(0,0,0,0.55);
 
             padding: 10px 18px;
 
@@ -220,56 +332,88 @@
             font-family: 'Nunito', sans-serif;
         }
 
+
         .restart-link:hover {
-            background: rgba(0,0,0,0.75);
+
+            background:
+                rgba(0,0,0,0.75);
         }
 
-        /* Mobile */
+
+        /* MOBILE */
 
         @media (max-width: 480px) {
 
             .screen {
+
                 padding: 20px;
             }
 
+
             .bouncy-title {
+
                 font-size: 2rem;
             }
 
+
             .cute-btn {
+
                 min-width: 110px;
-                padding: 10px 20px;
+
+                padding:
+                    10px 20px;
             }
         }
 
     </style>
+
 </head>
 
+
 <body>
+
 
     <!-- ========================= -->
     <!-- FIRST SCREEN -->
     <!-- ========================= -->
 
-    <div id="screen-main" class="screen active">
+    <div
+        id="screen-main"
+        class="screen active"
+    >
 
         <h1 class="bouncy-title">
-            Tui mam er kach theke taka peyechis 🐼
+
+            Tui mam er kach theke
+            taka peyechis 🐼
+
         </h1>
+
 
         <div class="button-container">
 
             <button
                 class="cute-btn btn-yes"
-                onclick="showScreen('screen-yes-main')">
+                onclick="
+                    showScreen(
+                        'screen-yes-main'
+                    )
+                "
+            >
 
                 Yes
 
             </button>
+
 
             <button
                 class="cute-btn btn-no"
-                onclick="showScreen('screen-barabari')">
+                onclick="
+                    showScreen(
+                        'screen-barabari'
+                    )
+                "
+            >
 
                 No
 
@@ -280,24 +424,40 @@
     </div>
 
 
+
     <!-- ========================= -->
-    <!-- YES SCREEN -->
+    <!-- YES → QR CODE -->
     <!-- ========================= -->
 
-    <div id="screen-yes-main" class="screen">
+    <div
+        id="screen-yes-main"
+        class="screen"
+    >
 
         <h2 class="bouncy-title">
+
             Pay Up! ✨
+
         </h2>
+
+
+        <!-- YOUR QR CODE -->
 
         <img
             src="1000188952.png"
             alt="QR Code"
-            class="qr-image">
+            class="qr-image"
+        >
+
 
         <button
             class="restart-link"
-            onclick="showScreen('screen-main')">
+            onclick="
+                showScreen(
+                    'screen-main'
+                )
+            "
+        >
 
             Start Over
 
@@ -306,31 +466,56 @@
     </div>
 
 
+
     <!-- ========================= -->
-    <!-- BARABARI SCREEN -->
+    <!-- BARABARI -->
     <!-- ========================= -->
 
-    <div id="screen-barabari" class="screen">
+    <div
+        id="screen-barabari"
+        class="screen"
+    >
 
         <h1 class="bouncy-title">
+
             Barabari hoyche 🤨
+
         </h1>
+
 
         <div class="button-container">
 
+
             <button
                 class="cute-btn"
-                style="background:#55efc4;color:#00b894;"
-                onclick="showScreen('screen-yes-barabari')">
+                style="
+                    background:#55efc4;
+                    color:#00b894;
+                "
+                onclick="
+                    showScreen(
+                        'screen-sorry'
+                    )
+                "
+            >
 
                 Yes
 
             </button>
 
+
             <button
                 class="cute-btn"
-                style="background:#ffeaa7;color:#fdcb6e;"
-                onclick="showScreen('screen-smile')">
+                style="
+                    background:#ffeaa7;
+                    color:#fdcb6e;
+                "
+                onclick="
+                    showScreen(
+                        'screen-sorry'
+                    )
+                "
+            >
 
                 No
 
@@ -341,52 +526,56 @@
     </div>
 
 
+
     <!-- ========================= -->
-    <!-- BARABARI YES SCREEN -->
+    <!-- SORRY + IMAGE + QR -->
     <!-- ========================= -->
 
-    <div id="screen-yes-barabari" class="screen">
+    <div
+        id="screen-sorry"
+        class="screen"
+    >
 
-        <h2 class="bouncy-title">
-            Ahem! Taka de! 💸
-        </h2>
+        <h1 class="bouncy-title">
+
+            Sorry 😭
+
+        </h1>
+
+
+        <!-- FIRST PNG -->
+
+        <img
+            src="sorry.png"
+            alt="Sorry"
+            class="pay-image"
+        >
+
+
+        <!-- QR CODE -->
 
         <img
             src="1000188952.png"
             alt="QR Code"
-            class="qr-image">
+            class="qr-image"
+        >
+
 
         <button
             class="restart-link"
-            onclick="showScreen('screen-main')">
-
-            Start Over
-
-        </button>
-
-    </div>
-
-
-    <!-- ========================= -->
-    <!-- SMILE SCREEN -->
-    <!-- ========================= -->
-
-    <div id="screen-smile" class="screen">
-
-        <h1 class="bouncy-title">
-            Tor smile a<br>
-            paid hoyegache ❤️
-        </h1>
-
-        <button
-            class="restart-link"
-            onclick="showScreen('screen-main')">
+            onclick="
+                showScreen(
+                    'screen-main'
+                )
+            "
+        >
 
             Play Again
 
         </button>
 
     </div>
+
 
 
     <!-- ========================= -->
@@ -398,30 +587,48 @@
         function showScreen(screenId) {
 
             const screens =
-                document.querySelectorAll('.screen');
+                document.querySelectorAll(
+                    '.screen'
+                );
 
-            screens.forEach(function(screen) {
 
-                screen.classList.remove('active');
+            screens.forEach(
+                function(screen) {
 
-            });
-
-            setTimeout(function() {
-
-                const targetScreen =
-                    document.getElementById(screenId);
-
-                if (targetScreen) {
-
-                    targetScreen.classList.add('active');
+                    screen.classList.remove(
+                        'active'
+                    );
 
                 }
+            );
 
-            }, 50);
+
+            setTimeout(
+                function() {
+
+                    const targetScreen =
+                        document.getElementById(
+                            screenId
+                        );
+
+
+                    if (targetScreen) {
+
+                        targetScreen.classList.add(
+                            'active'
+                        );
+
+                    }
+
+                },
+                50
+            );
 
         }
 
     </script>
 
+
 </body>
+
 </html>
